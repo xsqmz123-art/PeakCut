@@ -77,7 +77,7 @@ const result = document.querySelector("#result");
 const outputPreview = document.querySelector("#output-preview");
 const download = document.querySelector("#download");
 
-const MAX_FILE_BYTES = 250 * 1024 * 1024;
+const MAX_FILE_BYTES = 100 * 1024 * 1024;
 const MAX_CLIP_SECONDS = 60;
 let selectedFile = null;
 let sourceUrl = null;
@@ -118,7 +118,7 @@ fileInput.addEventListener("change", () => {
   if (!file) return;
   cleanupOutput();
   if (file.size > MAX_FILE_BYTES) {
-    showStatus("That file is too large", "Choose a video under 250 MB for this first version.");
+    showStatus("That file is too large", "Choose a video under 100 MB for this first version.");
     fileInput.value = "";
     return;
   }
